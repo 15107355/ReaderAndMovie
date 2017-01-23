@@ -1,6 +1,6 @@
 <!--pages/welcome/welcome.wxml-->
 <view class="container">
-<image class="user-avatar" src="/images/avatar/4.png"></image>
+<image class="user-avatar" src="http://p3.pstatp.com/thumb/2b70023954b40c6f9c2"></image>
 <text class="user-name">hello，7月</text>
 <view class="moto-container">
     <text class="moto">开启小程序之旅</text>

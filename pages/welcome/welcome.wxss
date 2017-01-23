@@ -2,6 +2,7 @@
     width:200rpx;
     height:200rpx;
     margin-top: 100rpx;
+    border-radius: 50%;
 }
 .user-name{
     margin-top: 100rpx;
