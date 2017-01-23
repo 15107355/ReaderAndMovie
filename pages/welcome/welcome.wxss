@@ -17,7 +17,7 @@
     text-align: center;
 }
 .moto{
-    font-size: 25rpx;
+    font-size: 28rpx;
     font-weight: bold;
     line-height: 80rpx;
     color: #405f80;

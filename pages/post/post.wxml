@@ -1,0 +1,28 @@
+<view>
+  <swiper indicator-dots="true" autoplay="true">
+    <swiper-item>
+      <image src="http://img05.tooopen.com/images/20150515/tooopen_sy_124560378935.jpg"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="http://img06.tooopen.com/images/20170114/tooopen_sy_197005712172.jpg"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="http://img02.tooopen.com/images/20151127/tooopen_sy_149674953835.jpg"></image>
+    </swiper-item>
+  </swiper>
+  <view class="post-container">
+    <view>
+      <image src="/images/avatar/4.png"></image>
+      <text>Nov 6 2016</text>
+    </view>
+    <text>正是虾肥蟹壮时</text>
+    <image src="http://img05.tooopen.com/images/20150515/tooopen_sy_124560378935.jpg"></image>
+    <text>正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时</text>
+    <view>
+      <image src="http://p3.pstatp.com/thumb/2b70023954b40c6f9c2"></image>
+      <text>92</text>
+      <image src="http://p3.pstatp.com/large/ef6000b92f5fafceab0"></image>
+      <text>65</text>
+    </view>
+  </view>
+</view>
