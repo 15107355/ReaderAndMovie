@@ -1,6 +1,7 @@
 swiper {
   width: 100%;
   height: 350rpx;
+  border-bottom: 5rpx solid #f1f1f1;
 }
 
 /*ctrl+/ 为注释快捷键*/

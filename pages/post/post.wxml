@@ -13,16 +13,16 @@
   <view class="post-container">
     <view class="post-author-date">
       <image class="post-author" src="http://p3.pstatp.com/thumb/2b70023954b40c6f9c2"></image>
-      <text class="post-date">Nov 6 2016</text>
+      <text class="post-date">{{date}}</text>
     </view>
-    <text class="post-title">正是虾肥蟹壮时</text>
-    <image class="post-image" src="http://www.qbaobei.com/UploadFiles/ysjk/2012/8/201208291543488027.jpg"></image>
-    <text class="post-content">蟹中含有较多的维生素A，对皮肤的角化有帮助；对儿童的佝偻病，老年人的骨质疏松也能起到补充钙质的作用。</text>
+    <text class="post-title">{{title}}</text>
+    <image class="post-image" src="{{post_img}}"></image>
+    <text class="post-content">{{content}}</text>
     <view class="post-like">
-      <image class="post-like-image" src="http://p2.pstatp.com/large/7294/6608368946"></image>
-      <text class="post-like-font">92条</text>
-      <image class="post-like-image" src="http://p2.pstatp.com/large/3759/2091335020"></image>
-      <text class="post-like-font">65条</text>
+      <image class="post-like-image" src="{{post_like_view}}"></image>
+      <text class="post-like-font">{{view_num}}</text>
+      <image class="post-like-image" src="{{post_like_collect}}"></image>
+      <text class="post-like-font">{{collect_num}}</text>
     </view>
   </view>
   <view class="post-container">
@@ -34,9 +34,9 @@
     <image class="post-image" src="http://www.pp3.cn/uploads/20120713j/939.jpg"></image>
     <text class="post-content">蟹中含有较多的维生素A，对皮肤的角化有帮助；对儿童的佝偻病，老年人的骨质疏松也能起到补充钙质的作用。</text>
     <view class="post-like">
-      <image class="post-like-image" src="http://p2.pstatp.com/large/7294/6608368946"></image>
+      <image class="post-like-image" src="{{post_like_view}}"></image>
       <text class="post-like-font">92条</text>
-      <image class="post-like-image" src="http://p2.pstatp.com/large/3759/2091335020"></image>
+      <image class="post-like-image" src="{{post_like_collect}}"></image>
       <text class="post-like-font">65条</text>
     </view>
   </view>
