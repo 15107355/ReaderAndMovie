@@ -15,5 +15,32 @@ Page({
   },
   onUnload:function(){
     // 页面关闭
+  },
+  onTap:function(){
+    // console.log("onTap");
+    // wx.navigateTo({
+    //   url: '../post/post',
+    //   success: function(res){
+    //     // success
+    //   },
+    //   fail: function() {
+    //     // fail
+    //   },
+    //   complete: function() {
+    //     // complete
+    //   }
+    // })
+    wx.redirectTo({
+      url: '../post/post',
+      success: function(res){
+        // success
+      },
+      fail: function() {
+        // fail
+      },
+      complete: function() {
+        // complete
+      }
+    })
   }
 })
