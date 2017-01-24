@@ -10,34 +10,21 @@
       <image src="http://img02.tooopen.com/images/20151127/tooopen_sy_149674953835.jpg"></image>
     </swiper-item>
   </swiper>
-  <view class="post-container">
-    <view class="post-author-date">
-      <image class="post-author" src="http://p3.pstatp.com/thumb/2b70023954b40c6f9c2"></image>
-      <text class="post-date">{{date}}</text>
+  <block wx:for="{{post_key}}" wx:for-item="item">
+    <view class="post-container">
+      <view class="post-author-date">
+        <image class="post-author" src="{{item.author_img}}"></image>
+        <text class="post-date">{{item.date}}</text>
+      </view>
+      <text class="post-title">{{item.title}}</text>
+      <image class="post-image" src="{{item.post_img}}"></image>
+      <text class="post-content">{{item.content}}</text>
+      <view class="post-like">
+        <image class="post-like-image" src="{{item.post_like_view}}"></image>
+        <text class="post-like-font">{{item.view_num}}</text>
+        <image class="post-like-image" src="{{item.post_like_collect}}"></image>
+        <text class="post-like-font">{{item.collect_num}}</text>
+      </view>
     </view>
-    <text class="post-title">{{title}}</text>
-    <image class="post-image" src="{{post_img}}"></image>
-    <text class="post-content">{{content}}</text>
-    <view class="post-like">
-      <image class="post-like-image" src="{{post_like_view}}"></image>
-      <text class="post-like-font">{{view_num}}</text>
-      <image class="post-like-image" src="{{post_like_collect}}"></image>
-      <text class="post-like-font">{{collect_num}}</text>
-    </view>
-  </view>
-  <view class="post-container">
-    <view class="post-author-date">
-      <image class="post-author" src="http://p1.pstatp.com/large/411000f6f5abf6d99b8"></image>
-      <text class="post-date">SEP 6 2016</text>
-    </view>
-    <text class="post-title">魔兽世界光影效果</text>
-    <image class="post-image" src="http://www.pp3.cn/uploads/20120713j/939.jpg"></image>
-    <text class="post-content">蟹中含有较多的维生素A，对皮肤的角化有帮助；对儿童的佝偻病，老年人的骨质疏松也能起到补充钙质的作用。</text>
-    <view class="post-like">
-      <image class="post-like-image" src="{{post_like_view}}"></image>
-      <text class="post-like-font">92条</text>
-      <image class="post-like-image" src="{{post_like_collect}}"></image>
-      <text class="post-like-font">65条</text>
-    </view>
-  </view>
+  </block>
 </view>
