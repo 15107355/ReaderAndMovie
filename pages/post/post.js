@@ -7,5 +7,22 @@ Page({
     this.setData({
       post_key: postsData.postList
     });
+  },
+
+  onPostTap:function(event){
+    var postId = event.currentTarget.dataset.postid;
+    // console.log("on Post id is" + postId);
+    wx.navigateTo({
+      url: 'post-detail/post-detail',
+      success: function(res){
+        // success
+      },
+      fail: function() {
+        // fail
+      },
+      complete: function() {
+        // complete
+      }
+    })
   }
 })
