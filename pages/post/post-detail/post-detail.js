@@ -7,19 +7,22 @@ Page({
     var postData = postsData.postList[postId];
     // console.log(postData);
     this.setData({
-      postData:postData
+      postData: postData
     })
+    var postsCollected = wx.getStorageSync('posts_Collected')
+    if (postsCollected) {
+      var postCollected = postsCollected[postId]
+      this.setData({
+        collected: postCollected
+      })
+    }
+    else {
+      var postsCollected = {};
+      postsCollected[postId] = false;
+      wx.setStorageSync('posts_Collected', postsCollected);
+    }
   },
-  onReady: function () {
-    // 页面渲染完成
-  },
-  onShow: function () {
-    // 页面显示
-  },
-  onHide: function () {
-    // 页面隐藏
-  },
-  onUnload: function () {
-    // 页面关闭
+  onCollectionTap: function (event) {
+    var postsCollected = wx.getStorageSync('posts_Collected')
   }
 })
