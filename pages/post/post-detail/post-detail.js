@@ -1,6 +1,8 @@
 var postsData = require("../../../data/posts-data.js")
 Page({
-  data: {},
+  data: {
+    isPlayingMusic: false
+  },
   onLoad: function (options) {
     // 页面初始化 options为页面跳转所带来的参数
     var postId = options.id;
@@ -46,10 +48,26 @@ Page({
     })
   },
   onMusicTap: function (event) {
-    wx.playBackgroundAudio({
-      dataUrl: 'http://ws.stream.qqmusic.qq.com/C100003507bR0gDKBm.m4a?fromtag=38',
-      title: "night",
-      coverImgUrl: "http://y.gtimg.cn/music/photo_new/T002R150x150M000001TEc6V0kjpVC.jpg?max_age=2592000"
-    })
+    var currentPostId = this.data.currentPostId;
+    var isPlayingMusic = this.data.isPlayingMusic;
+    if (isPlayingMusic) {
+      wx.pauseBackgroundAudio();
+      this.setData({
+        isPlayingMusic: false
+      })
+      // this.data.isPlayingMusic = false;
+    }
+    else {
+      wx.playBackgroundAudio({
+        dataUrl: 'http://ws.stream.qqmusic.qq.com/C100003507bR0gDKBm.m4a?fromtag=38',
+        title: "night",
+        coverImgUrl: "http://y.gtimg.cn/music/photo_new/T002R150x150M000001TEc6V0kjpVC.jpg?max_age=2592000"
+      })
+      this.setData({
+        isPlayingMusic: true
+      })
+      // this.data.isPlayingMusic = true;
+    }
+
   }
 })
