@@ -24,5 +24,21 @@ Page({
         // complete
       }
     })
+  },
+  onSwiperItemTap:function(event){
+    var postId = event.currentTarget.dataset.postid;
+    // console.log("on Post id is" + postId);
+    wx.navigateTo({
+      url: 'post-detail/post-detail?id=' + postId,
+      success: function(res){
+        // success
+      },
+      fail: function() {
+        // fail
+      },
+      complete: function() {
+        // complete
+      }
+    })
   }
 })
