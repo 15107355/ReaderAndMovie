@@ -101,4 +101,6 @@
   margin-right: 30rpx;
   line-height: 44rpx;
   letter-spacing: 2px;
+  font-size: 30rpx;
+  margin-bottom: 30rpx;
 }
