@@ -26,29 +26,38 @@ Page({
       postsCollected[postId] = false;
       wx.setStorageSync('posts_Collected', postsCollected);
     };
-    if(app.globalData.g_isPlayingMusic && app.globalData.g_currentMusicPostId === postId){
+    if (app.globalData.g_isPlayingMusic && app.globalData.g_currentMusicPostId === postId) {
       // this.data.isPlayingMusic=true;这句话实现不了数据赋值，只能用下面的语句进行数据绑定
       this.setData({
-        isPlayingMusic:true
+        isPlayingMusic: true
       })
     }
     this.setMusicMonitor();
   },
-  setMusicMonitor:function(){
-      var that = this;
+  onShareAppMessage: function () {
+    var sPostId = this.data.currentPostId;
+    var postData = postsData.postList[sPostId];
+    return {
+      title: postData.title,
+      desc: postData.content,
+      path: postData.postId
+    }
+  },
+  setMusicMonitor: function () {
+    var that = this;
     wx.onBackgroundAudioPlay(function () {
       that.setData({
-        isPlayingMusic:true
+        isPlayingMusic: true
       })
-      app.globalData.g_isPlayingMusic= true;
-      app.globalData.g_currentMusicPostId= that.data.currentPostId;
+      app.globalData.g_isPlayingMusic = true;
+      app.globalData.g_currentMusicPostId = that.data.currentPostId;
     });
     wx.onBackgroundAudioPause(function () {
       that.setData({
-        isPlayingMusic:false
+        isPlayingMusic: false
       })
-      app.globalData.g_isPlayingMusic= false;
-      app.globalData.g_currentMusicPostId=null;
+      app.globalData.g_isPlayingMusic = false;
+      app.globalData.g_currentMusicPostId = null;
     });
   },
   onCollectionTap: function (event) {
