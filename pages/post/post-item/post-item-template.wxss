@@ -49,7 +49,7 @@
 
 .post-content {
   color: #666;
-  font-size: 28rpx;
+  font-size: 32rpx;
   /*margin-bottom: 20rpx;
   margin-left: 20rpx;
   margin-right: 20rpx;*/

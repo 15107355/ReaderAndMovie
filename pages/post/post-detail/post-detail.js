@@ -1,10 +1,12 @@
 var postsData = require("../../../data/posts-data.js")
+var app = getApp();
 Page({
   data: {
     isPlayingMusic: false
   },
   onLoad: function (options) {
     // 页面初始化 options为页面跳转所带来的参数
+    // var globalData = app.globalData;
     var postId = options.id;
     this.data.currentPostId = postId;
     var postData = postsData.postList[postId];
@@ -24,16 +26,27 @@ Page({
       postsCollected[postId] = false;
       wx.setStorageSync('posts_Collected', postsCollected);
     };
-    var that = this;
+    if(app.globalData.g_isPlayingMusic){
+      // this.data.isPlayingMusic=true;这句话实现不了数据赋值，只能用下面的语句进行数据绑定
+      this.setData({
+        isPlayingMusic:true
+      })
+    }
+    this.setMusicMonitor();
+  },
+  setMusicMonitor:function(){
+      var that = this;
     wx.onBackgroundAudioPlay(function () {
       that.setData({
         isPlayingMusic:true
       })
+      app.globalData.g_isPlayingMusic= true;
     });
     wx.onBackgroundAudioPause(function () {
       that.setData({
         isPlayingMusic:false
       })
+      app.globalData.g_isPlayingMusic= false;
     });
   },
   onCollectionTap: function (event) {

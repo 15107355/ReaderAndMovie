@@ -99,8 +99,8 @@
   margin-left: 30rpx;
   margin-top: 20rpx;
   margin-right: 30rpx;
-  line-height: 44rpx;
-  letter-spacing: 2px;
-  font-size: 30rpx;
+  line-height: 50rpx;
+  letter-spacing: 3px;
+  font-size: 36rpx;
   margin-bottom: 30rpx;
 }
