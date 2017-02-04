@@ -6,6 +6,7 @@ Page({
   onLoad: function (options) {
     // 页面初始化 options为页面跳转所带来的参数
     var postId = options.id;
+    this.data.currentPostId = postId;
     var postData = postsData.postList[postId];
     // console.log(postData);
     this.setData({
@@ -22,7 +23,18 @@ Page({
       var postsCollected = {};
       postsCollected[postId] = false;
       wx.setStorageSync('posts_Collected', postsCollected);
-    }
+    };
+    var that = this;
+    wx.onBackgroundAudioPlay(function () {
+      that.setData({
+        isPlayingMusic:true
+      })
+    });
+    wx.onBackgroundAudioPause(function () {
+      that.setData({
+        isPlayingMusic:false
+      })
+    });
   },
   onCollectionTap: function (event) {
     var postsCollected = wx.getStorageSync('posts_Collected')
@@ -33,7 +45,7 @@ Page({
       "分享给微信好友",
       "分享到QQ",
       "分享到微博"
-    ]
+    ];
     wx.showActionSheet({
       itemList: itemList,
       itemColor: "#000",
@@ -48,7 +60,9 @@ Page({
     })
   },
   onMusicTap: function (event) {
-    var currentPostId = this.data.currentPostId;
+    var cPostId = this.data.currentPostId;
+    //和上面定义的postId不重复，上面的指this.data.currentPostId赋值到postId中，上面这句话指的是cPost等于this.data.currentPostId
+    var postData = postsData.postList[cPostId];
     var isPlayingMusic = this.data.isPlayingMusic;
     if (isPlayingMusic) {
       wx.pauseBackgroundAudio();
@@ -59,9 +73,9 @@ Page({
     }
     else {
       wx.playBackgroundAudio({
-        dataUrl: 'http://ws.stream.qqmusic.qq.com/C100003507bR0gDKBm.m4a?fromtag=38',
-        title: "night",
-        coverImgUrl: "http://y.gtimg.cn/music/photo_new/T002R150x150M000001TEc6V0kjpVC.jpg?max_age=2592000"
+        dataUrl: postData.music.url,
+        title: postData.music.title,
+        coverImgUrl: postData.music.coverImg,
       })
       this.setData({
         isPlayingMusic: true
