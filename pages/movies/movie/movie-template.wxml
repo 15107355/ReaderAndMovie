@@ -1,8 +1,8 @@
 <import src="../stars/stars-template.wxml" />
 <template name="movieTemplate">
     <view class="movie-container">
-    <image class="movie-img" src="http://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2395733377.jpg"></image>
-    <text class="mive-title">你的名字</text>
-    <template is="starsTemplate" />
+    <image class="movie-img" src="{{coverageUrl}}"></image>
+    <text class="mive-title">{{title}}</text>
+    <template is="starsTemplate" data="{{average}}"/>
     </view>
 </template>
