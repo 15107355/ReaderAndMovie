@@ -1,8 +1,8 @@
 <import src="../stars/stars-template.wxml" />
 <template name="movieTemplate">
-    <view>
-    <image src="http://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2395733377.jpg"></image>
-    <text>你的名字</text>
+    <view class="movie-container">
+    <image class="movie-img" src="http://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2395733377.jpg"></image>
+    <text class="mive-title">你的名字</text>
     <template is="starsTemplate" />
     </view>
 </template>
