@@ -6,3 +6,4 @@
     <template is="starsTemplate" data="{{average}}"/>
     </view>
 </template>
+<!--template 数据传递用用data,其他标签直接用字段传递-->

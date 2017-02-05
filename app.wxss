@@ -10,4 +10,5 @@
 text {
   font-family: "PingFang SC","Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei","Helvetica Neue",Arial,sans-serif;
   font-size: 24rpx;
+  color: #666;
 }

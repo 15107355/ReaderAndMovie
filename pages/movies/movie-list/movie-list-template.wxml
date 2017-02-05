@@ -10,8 +10,9 @@
         </view>
       </view>
       <view class="movies-container">
-        <block wx:for="{{dMovies}}" wx:for-item="dMovie">
+        <block wx:for="{{dmovies}}" wx:for-item="dMovie">
           <template is="movieTemplate" data="{{...dMovie}}"/>
+          <!--...dMovie 用三个小点把把dMovie展开-->
         </block>
         <!--<template is="movieTemplate" />
         <template is="movieTemplate" />-->
