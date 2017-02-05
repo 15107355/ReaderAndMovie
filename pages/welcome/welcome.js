@@ -30,7 +30,7 @@ Page({
     //     // complete
     //   }
     // })
-    wx.redirectTo({
+    wx.switchTab({
       url: '../post/post',
       success: function(res){
         // success
